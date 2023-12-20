@@ -1,30 +1,39 @@
 const express = require('express');
+const router = require('./routes');
 const routes = require('./routes');
-//const mongoose = require('mongoose');
-
-
-//importar para que acepte el formato json
 const bodyParser = require('body-parser');
+const cors = require('cors');
+const { sequelize, testConnection } = require('./config/database');
+// Conocer las solicitudes HTTP que se envían al server.
+const morgan = require('morgan');
 
-//crear el servidor
+
 
 const app = express();
 
-//mongoso se remplaza por la bd que se va usar
-//mongoose.set('strictQuery', true);
-//conexion a mongose
+// Testear la conexión a la base de datos
+testConnection();
 
-//mongoose.Promise = global.Promise;
-//mongoose.connect('mongodb://localhost:27017/SeepApi');
+// Sincronizar el modelo con la base de datos
+// sequelize.sync({ force: false })
+//   .then(() => {
+//     console.log('Base de datos sincronizada');
+//   })
+//   .catch((error) => {
+//     console.error('Error al sincronizar la base de datos:', error);
+//   });
 
-//usando bodyParse para que acepte formato json y decodifique la url
+// Middleware
+app.use(morgan("dev"));
+
+
+
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({extended:true}))
+app.use(bodyParser.urlencoded({ extended: true }));
 
+//Habilitar cors
+app.use(cors());
 
+app.use('/', routes());
 
-//ruta
-app.use('/',routes());
-
-//puerto
 app.listen(5000);
