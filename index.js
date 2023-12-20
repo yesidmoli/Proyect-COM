@@ -14,15 +14,6 @@ const app = express();
 // Testear la conexión a la base de datos
 testConnection();
 
-// Sincronizar el modelo con la base de datos
-// sequelize.sync({ force: false })
-//   .then(() => {
-//     console.log('Base de datos sincronizada');
-//   })
-//   .catch((error) => {
-//     console.error('Error al sincronizar la base de datos:', error);
-//   });
-
 // Middleware
 app.use(morgan("dev"));
 
