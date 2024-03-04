@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+.border {
+    border: 1px solid #000;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+.select-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.select-container select {
+    width: 130px;
+    margin-bottom: 5px;
+}
+
+h2 {
+    text-align: center;
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-gap: 10px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 10px 0;
+}
+
+th, td {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 3px;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+/* Añade estilos para centrar la tabla horizontalmente */
+#data-table {
+    margin: 0 auto;
+}
+
+/* Modifica estilos de la paginación y botones */
+.pagination {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50px;
+}
+
+.btn-container {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.btn {
+    margin: 0 5px; /* Agrega un margen entre los botones */
+}
+
+.btn-previos {
+    margin-right: 10px;
+}
+textarea {
+    border: none;
+    background-color: transparent;
+    /*resize: none; /* Evita que se pueda redimensionar */
+    outline: none; /* Elimina el contorno al hacer clic */
+    overflow: hidden; /* Evita la barra de desplazamiento vertical */
+}
+table input{
+    border: none;
+    width: 98%;
+}
+.select-one{
+    position: relative;
+    top: -20px;
+    padding: 15px;
+}
+.select-two{
+    position: relative;
+    top: -10px;
+    padding: 5px;
+}
+.select-three{
+    padding: 8px;
+    position: relative;
+    top: -2px;
+}
+.select-four{
+    padding: 10px;
+    position: relative;
+    top: 10px;
+}
+.enviar{
+    position: relative;
+    left: 45%;
+}

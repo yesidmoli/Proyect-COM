@@ -85,6 +85,6 @@ exports.eliminarEmpresario = async(req, res) => {
             id: id
         }   
     })
-    res.json({ mensaje: 'El empleado ha sido eliminado exitosamente'});
+    res.json({ mensaje: 'El empresario ha sido eliminado exitosamente'});
 }
 

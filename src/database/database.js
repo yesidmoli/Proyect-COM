@@ -5,7 +5,7 @@ const sequelize = new Sequelize(
 //   'entrepreneurship_database',   // db name
 'entrepreneurship_database',
   'root',         // Username
-  '', // password
+  'root', // password
   {
     host: 'localhost',
     dialect: 'mysql',

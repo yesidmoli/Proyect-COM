@@ -1,4 +1,3 @@
-
 const Activities = require("../models/Activities");
 const AssignedActivities = require("../models/AssignedActivities");
 const DiagnosisResponses = require("../models/DiagnosisResponses");

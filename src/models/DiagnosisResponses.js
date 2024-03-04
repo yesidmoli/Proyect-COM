@@ -13,7 +13,6 @@ const DiagnosisResponses = sequelize.define('DiagnosisResponses', {
         type: DataTypes.STRING(5), // Puede ser 'SI', 'NO', 'N/A', etc.
         allowNull: false,
     },
-    // Otros campos según tus necesidades
 }, {
     tableName: 'DiagnosisResponses',
     timestamps: false
