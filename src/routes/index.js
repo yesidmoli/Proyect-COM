@@ -4,14 +4,16 @@ const router = express.Router();
 const diagnosticController = require('../controllers/diagnosticController');
 
 const EmpresarioController = require('../controllers/EmpresarioController');
-
-
+ 
 module.exports = function(){
 
 
     // Route to handle diagnosis responses and activity assignment.
     router.post('/diagnostic/answers', diagnosticController.handleDiagnosticAnswers);
 
+    router.get('/api/assigned-activities/:empresario_id', diagnosticController.AssignedActivities)
+
+    router.put('/api/update-assigned-activities/:activitie_id', diagnosticController.updateAssignedActivitie)
 
     // Ruta para registar un Empresario.
     router.post('/empresarios', EmpresarioController.nuevoEmpresario);
