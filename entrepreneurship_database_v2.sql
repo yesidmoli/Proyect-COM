@@ -202,7 +202,9 @@ CREATE TABLE `Entrepreneurs` (
   `registro_camara` varchar(255) NOT NULL,
   `renovacion_camara` varchar(255) NOT NULL,
   `diagnostico_empresarial` varchar(255) NOT NULL,
-  `observaciones` varchar(255) DEFAULT NULL
+  `observaciones` varchar(255) DEFAULT NULL,
+  `rol_usuario` VARCHAR(20) DEFAULT NULL,
+  `contarsena` VARCHAR(10) DEFAULT NULL,
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
