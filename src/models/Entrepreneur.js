@@ -26,7 +26,15 @@ const Entrepreneur = sequelize.define('Entrepreneur', {
     },
     cedula_representante: {
         type: DataTypes.INTEGER,
-        allowNull: false
+        allowNull: false,
+        validate: {
+            len: {
+                // Permitir de 7 a 10 dígitos.
+                args: [7,10],
+                // Mensaje si no se cumple con esta longitud.
+                msg: 'El número de documento debe ser de 7 a 10 dígitos'
+            }
+        }
     },
     fecha_nacimiento_representante: {
         type: DataTypes.STRING,
@@ -127,6 +135,22 @@ const Entrepreneur = sequelize.define('Entrepreneur', {
     observaciones: {
         type: DataTypes.STRING,
         allowNull: true
+    },
+    rol_usuario: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    contrasena: {
+        type: DataTypes.STRING,
+        allowNull: false,
+        validate: {
+            // Función de validación personalizada para la contraseña
+            validarContrasena(value) {
+                if (!/(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^&*()_+])[A-Za-z\d!@#$%^&*()_+]{8,}/.test(value)) {
+                    throw new Error('La contraseña debe tener al menos 8 caracteres, incluir al menos una mayúscula, una minúscula, un carácter especial y cinco números.');
+                }
+            },
+        }
     }
 }, {
     tableName: 'Entrepreneurs',
